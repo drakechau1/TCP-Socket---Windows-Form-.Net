@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
@@ -96,6 +89,10 @@ namespace TCP_Chat___Client
                 btn_disconnect.Enabled = true;
                 btn_send.Enabled = true;
                 btn_attachFile.Enabled = true;
+
+                txt_message.Enabled = true;
+                txt_remoteIP.Enabled = false;
+                txt_remotePort.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -126,6 +123,12 @@ namespace TCP_Chat___Client
                 btn_connect.Enabled = true;
                 btn_disconnect.Enabled = false;
                 btn_attachFile.Enabled = false;
+                btn_send.Enabled = false;
+                btn_remove.Enabled = false;
+
+                txt_message.Enabled = false;
+                txt_remoteIP.Enabled = true;
+                txt_remotePort.Enabled = true;
             }
             catch(SocketException ex)
             {
@@ -142,7 +145,22 @@ namespace TCP_Chat___Client
         private void btn_attachFile_Click(object sender, EventArgs e)
         {
             ///
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                label_attachFile.Text = ofd.FileName;
 
+                btn_remove.Enabled = true;
+                btn_attachFile.Enabled = false;
+            }
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            label_attachFile.Text = "No file attached curently";
+            btn_attachFile.Enabled = true;
+            btn_remove.Enabled = false;
         }
     }
 }

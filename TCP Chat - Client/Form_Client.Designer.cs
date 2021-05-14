@@ -38,10 +38,11 @@ namespace TCP_Chat___Client
             this.label3 = new System.Windows.Forms.Label();
             this.txt_message = new System.Windows.Forms.TextBox();
             this.btn_attachFile = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_attachFile = new System.Windows.Forms.Label();
             this.btn_send = new System.Windows.Forms.Button();
             this.txt_remotePort = new System.Windows.Forms.TextBox();
             this.btn_clearMessage = new System.Windows.Forms.Button();
+            this.btn_remove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,6 +123,7 @@ namespace TCP_Chat___Client
             // 
             // txt_message
             // 
+            this.txt_message.Enabled = false;
             this.txt_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_message.Location = new System.Drawing.Point(163, 104);
             this.txt_message.Name = "txt_message";
@@ -140,15 +142,15 @@ namespace TCP_Chat___Client
             this.btn_attachFile.UseVisualStyleBackColor = true;
             this.btn_attachFile.Click += new System.EventHandler(this.btn_attachFile_Click);
             // 
-            // label4
+            // label_attachFile
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "No file attached curently";
+            this.label_attachFile.AutoSize = true;
+            this.label_attachFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_attachFile.Location = new System.Drawing.Point(317, 168);
+            this.label_attachFile.Name = "label_attachFile";
+            this.label_attachFile.Size = new System.Drawing.Size(219, 25);
+            this.label_attachFile.TabIndex = 6;
+            this.label_attachFile.Text = "No file attached curently";
             // 
             // btn_send
             // 
@@ -184,14 +186,27 @@ namespace TCP_Chat___Client
             this.btn_clearMessage.UseVisualStyleBackColor = true;
             this.btn_clearMessage.Click += new System.EventHandler(this.txt_clearMessage_Click);
             // 
+            // btn_remove
+            // 
+            this.btn_remove.Enabled = false;
+            this.btn_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove.Location = new System.Drawing.Point(197, 156);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(104, 49);
+            this.btn_remove.TabIndex = 9;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 627);
+            this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_clearMessage);
             this.Controls.Add(this.btn_send);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label_attachFile);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_message);
             this.Controls.Add(this.txt_message);
@@ -221,10 +236,11 @@ namespace TCP_Chat___Client
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_message;
         private System.Windows.Forms.Button btn_attachFile;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_attachFile;
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.TextBox txt_remotePort;
         private System.Windows.Forms.Button btn_clearMessage;
+        private System.Windows.Forms.Button btn_remove;
     }
 }
 
